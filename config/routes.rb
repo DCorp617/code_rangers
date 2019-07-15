@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :states, only: [:index]
+
+  resources :cities, only: [:show]
 end
