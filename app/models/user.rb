@@ -1,4 +1,4 @@
-require_relative './constants'
+require_relative './constants/states'
 
 class User < ApplicationRecord
   validates :first_name, presence: true
