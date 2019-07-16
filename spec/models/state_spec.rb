@@ -7,4 +7,6 @@ describe State do
 
   it { should have_valid(:description).when("The sand is soft") }
   it { should_not have_valid(:description).when(nil, "") }
+
+  it { should have_many :cities}
 end
