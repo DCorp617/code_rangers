@@ -32,7 +32,7 @@ State.create([
   { :name => 'Nebraska', :abbrevation => 'NE', :description => 'This is a state'},
   { :name => 'Nevada', :abbrevation => 'NV', :description => 'This is a state'},
   { :name => 'New Hampshire', :abbrevation => 'NH', :description => 'This is a state'},
-  { :name => 'New Jersey', :abbrevation => 'NJ', :description => 'This is a state'},
+  { :name => 'New Jersey', :abbrevation => 'NJ', :description => 'This is a state'},git 
   { :name => 'New Mexico', :abbrevation => 'NM', :description => 'This is a state'},
   { :name => 'New York', :abbrevation => 'NY', :description => 'This is a state'},
   { :name => 'North Carolina', :abbrevation => 'NC', :description => 'This is a state'},
