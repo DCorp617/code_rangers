@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_07_16_191913) do
     t.bigint "reviewable_id"
     t.text "description", null: false
     t.integer "rating", null: false
+    t.integer "net_votes", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"

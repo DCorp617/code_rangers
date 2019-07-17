@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.references :reviewable, polymorphic: true, index: true
       t.text :description, null: false
       t.integer :rating, null: false
+      t.integer :net_votes, null: false, default: 0
 
       t.timestamps null: false
     end
