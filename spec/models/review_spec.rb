@@ -10,6 +10,6 @@ describe Review do
   it { should have_valid(:net_votes).when("0") }
   it { should_not have_valid(:net_votes).when(nil, "") }
 
-  it { should belong_to :user}
+  it { should belong_to :user }
   it { should belong_to (:reviewable)}
 end
