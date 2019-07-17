@@ -3,9 +3,16 @@
 <ul>
   <% @reviews.each do |review| %>
     <li>
-      - Rating: <%= review.rating %>
-      - Description: <%= review.description %>
-      - Net Votes: <%= review.net_votes %>
+      <div>
+        - Rating: <%= review.rating %>
+        - Description: <%= review.description %>
+        <% @votes.each do |vote| %>
+          <% if vote.review == review %>
+            <% review.net_votes += vote.vote_value %>
+          <% end %>
+        <% end %>
+        - Net Votes: <%= review.net_votes %>
+      </div>
     </li>
   <% end %>
 </ul>
