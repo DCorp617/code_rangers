@@ -40,6 +40,7 @@ render(){
   })
   return(
     <div>
+      <h1>Hey</h1>
       {us_states}
     </div>
   )

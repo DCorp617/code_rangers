@@ -30,7 +30,7 @@ class StateShowContainer extends Component {
     render(){
       return(
         <div>
-          {this.state.stateShow.name} show page
+          {this.state.stateShow.name}
         </div>
       )
     }
