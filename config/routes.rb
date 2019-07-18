@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  root 'states#index'
   devise_for :users
 
-  resources :states, only: [:index, :show]
-  resources :cities, only: [:index, :show] do
-    resources :reviews, only: [:index]
+  namespace :api do
+    namespace :v1 do
+      resources :states, only: [:index, :show]
+    end
   end
 
-  resources :parks, only: [:index, :show]
-
+  get '*page', to: 'static_pages#index', constraints: ->(req) do
+    !req.xhr? && req.format.html?
+  end
+  root 'static_pages#index'
 end

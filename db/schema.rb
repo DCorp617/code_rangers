@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_07_17_172411) do
 
   create_table "states", force: :cascade do |t|
     t.string "name", null: false
+    t.string "abbreviation", null: false
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
