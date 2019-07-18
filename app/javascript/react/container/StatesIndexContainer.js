@@ -34,7 +34,7 @@ render(){
       <StateTile
         key={state.id}
         id={state.id}
-        abbrevation={state.abbrevation}
+        abbreviation={state.abbreviation}
       />
     )
   })

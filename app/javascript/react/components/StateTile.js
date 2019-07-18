@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const StateTile = props => {
   return(
     <div className="state">
-      <Link to={`/states/${props.id}`}> {props.abbrevation} </Link>
+      <Link to={`/states/${props.id}`}> {props.abbreviation} </Link>
     </div>
   )
 }
