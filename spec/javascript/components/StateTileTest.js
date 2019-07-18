@@ -13,7 +13,7 @@ describe('StateTile', () => {
       <BrowserRouter>
         <StateTile
           id={1}
-          abbrevation={"AK"}
+          abbreviation={"AK"}
         />
       </BrowserRouter>
       );
