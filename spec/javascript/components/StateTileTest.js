@@ -22,5 +22,4 @@ describe('StateTile', () => {
   it("should be a link to the state show page", () => {
     expect(wrapper.find("Link").props()["to"]).toBe("/states/1")
   })
-
 });

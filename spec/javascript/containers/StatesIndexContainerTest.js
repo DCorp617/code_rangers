@@ -28,7 +28,6 @@ describe('StatesIndexContainer', () => {
   it('should render a StateTile component', () => {
 
     wrapper.setState({ states: states })
-    debugger
     expect(wrapper.state()).toEqual({ states: [{ id: 1, name: 'Alaska', abbreviation: 'AK', description: "This is Alaska!" }] })
   });
 });
