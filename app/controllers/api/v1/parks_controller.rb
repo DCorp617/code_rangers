@@ -5,7 +5,8 @@ class Api::V1::ParksController < ApplicationController
   end
 
   def show
-    render json: Park.find(params[:id])
+    stateID = params[:id]
+    render json: Park.where(state_id: stateID)
   end
 
 end

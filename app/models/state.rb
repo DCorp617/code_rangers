@@ -1,5 +1,6 @@
 class State < ApplicationRecord
   has_many :cities
+  has_many :parks
 
   validates :name, presence: true
   validates :description, presence: true

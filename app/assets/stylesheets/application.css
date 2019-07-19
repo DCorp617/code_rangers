@@ -15,3 +15,20 @@
  *= require foundation_and_overrides
 
  */
+body {
+  background-color: #967C74
+}
+
+.top-bar {
+  background-color: #E58552;
+}
+
+.park-name {
+  margin-left: 1rem;
+  color: #99B3CF
+}
+
+.state-name {
+  margin-left: 1rem;
+  color: #384634
+}
