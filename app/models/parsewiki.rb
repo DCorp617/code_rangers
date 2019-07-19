@@ -1,19 +1,9 @@
-class ApplicationController < ActionController::Base
+require 'httparty'
+
+class ParseWiki < ApplicationRecord
   include HTTParty
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-
-  protect_from_forgery unless: -> { request.format.json? }
-
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
-  protected
-
-  def configure_permitted_parameters
-   devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :home_state])
-  end
-
   base_uri "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles="
+
   def state_info(subject)
     state_query = subject + " (U.S. state)"
     query_string = state_query.gsub(' ','%20')
@@ -51,5 +41,4 @@ class ApplicationController < ActionController::Base
       wiki_intro = wiki_intro.sub(/ +,/, ",")
     end
   end
-
 end
