@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :home_state, inclusion: { in: State::STATES, allow_blank: true}, length: { is: 2, allow_blank: true }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+ def admin?
+   role == "admin"
+ end
 end
