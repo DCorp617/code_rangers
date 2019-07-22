@@ -10,7 +10,6 @@ State.create([
   { :name => 'Colorado', :abbreviation => 'CO', :description => 'This is a state'},
   { :name => 'Connecticut', :abbreviation => 'CT', :description => 'This is a state'},
   { :name => 'Delaware', :abbreviation => 'DE', :description => 'This is a state'},
-  { :name => 'District of Columbia', :abbreviation => 'DC', :description => 'This is a state'},
   { :name => 'Florida', :abbreviation => 'FL', :description => 'This is not a state'},
   { :name => 'Georgia', :abbreviation => 'GA', :description => 'This is a state'},
   { :name => 'Hawaii', :abbreviation => 'HI', :description => 'This is a state'},

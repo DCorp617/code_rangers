@@ -70,9 +70,10 @@ class StateShowContainer extends Component {
         <div>
           <div>
             <h1 className="state-name">{this.state.stateShow.name}</h1>
+            {this.state.stateShow.description}
           </div>
           <div>
-            {nat_parks}
+          {nat_parks}
           </div>
         </div>
       )
