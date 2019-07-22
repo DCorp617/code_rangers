@@ -19,6 +19,3 @@ class ParkShowContainer extends Component {
 }
 
 export default ParkShowContainer
-
-
-// {this.props.parkName}

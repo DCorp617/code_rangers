@@ -15,5 +15,3 @@ export const App = (props) => {
 }
 
 export default App
-
-// <Route exact path="/states/:id/park/:id" component={ParksShowContainer} />

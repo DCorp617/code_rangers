@@ -1,4 +1,5 @@
 require_relative "../../../models/parsewiki.rb"
+require_relative "../../../models/serializers/state_show_serializer"
 
 class Api::V1::StatesController < ApplicationController
 
@@ -11,6 +12,7 @@ class Api::V1::StatesController < ApplicationController
   end
 
   def show
-    render json: State.find(params[:id])
+    render json: State.find(params[:id]),
+    serializer: StateShowSerializer
   end
 end
