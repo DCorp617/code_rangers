@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import ParkShowContainer from './ParkShowContainer'
+import ParkTile from '../components/ParkTile'
+import { Link } from "react-router-dom"
 
 
 class StateShowContainer extends Component {
@@ -36,7 +37,7 @@ class StateShowContainer extends Component {
     getParks() {
       let stateId = this.props.match.params.id
 
-      fetch(`/api/v1/parks/${stateId}`)
+      fetch(`/api/v1/states/${stateId}/parks`)
       .then(response => {
         if (response.ok){
           return response
@@ -56,12 +57,12 @@ class StateShowContainer extends Component {
 
     render(){
       let nat_parks = this.state.parks.map(park => {
-
         return(
-          <ParkShowContainer
+          <ParkTile
             key={park.id}
+            id={park.id}
+            stateId={park.state_id}
             parkName={park.name}
-            description={park.description}
           />
         )
       })
@@ -71,6 +72,9 @@ class StateShowContainer extends Component {
           <div>
             <h1 className="state-name">{this.state.stateShow.name}</h1>
             {this.state.stateShow.description}
+          </div>
+          <div>
+            <Link to={`/`}>Back</Link>
           </div>
           <div>
           {nat_parks}
