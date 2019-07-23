@@ -16,10 +16,46 @@
 
  */
 
- .state, .state a:visited {
-   fill: #384634;
- }
+body {
+   background-color: #967C74;
+}
 
- .state a:hover {
-   fill: #E58552;
- }
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.map-of-usa {
+  padding-top: 50px;
+}
+
+.top-bar {
+  background-color: #E58552;
+}
+.park-name {
+  margin-left: 1rem;
+}
+.state-name {
+  margin-left: 1rem;
+}
+
+.state, .state a:visited {
+ fill: #384634;
+}
+
+.state a:hover {
+ fill: #E58552;
+}
+
+.title {
+  padding-top: 50px;
+  color: #FFFFFF;
+  font-size: 80px;
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
