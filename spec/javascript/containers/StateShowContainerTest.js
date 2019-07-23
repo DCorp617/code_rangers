@@ -2,20 +2,25 @@ import React from 'react';
 import StateShowContainer from '../../../app/javascript/react/container/StateShowContainer'
 import ParkShowContainer from '../../../app/javascript/react/container/ParkShowContainer'
 import testHelper from '../testHelper'
-import {BrowserRouter} from "react-router-dom"
-
+import { BrowserRouter } from "react-router-dom"
 
 describe('StateShowContainer', () => {
   let wrapper
-  let stateShow
+  let stateObject
   let parks
 
   beforeEach(() => {
-    stateShow = [
-      {name: 'Alaska'}
-    ]
+    stateObject = {
+      name: "Alaska", description: "Kind of cold"
+    }
     parks = [
-      {name: 'Glacier Bay', state_id: 2, description: "This is a national park"}
+      { name: "Glacier Bay",
+        description: "Nice"
+      },
+      {
+        name: "Denali",
+        description: "Also nice"
+      }
     ]
 
     wrapper = shallow(
@@ -23,15 +28,30 @@ describe('StateShowContainer', () => {
       );
   });
 
+  it('should check the default state of a State\'s national parks', () => {
+    expect(wrapper.state()).toEqual({ parks: [], stateObject: {} })
 
-  it('should check the default state of a State\'s national park', () => {
-
-    expect(wrapper.state()).toEqual({ parks: [], stateShow: {} })
-  })
-
-  it('should render a ParkShowContainer', () => {
-
-    wrapper.setState({ parks: parks, stateShow: stateShow })
-    expect(wrapper.state()).toEqual({ parks: [{name: 'Glacier Bay', state_id: 2, description: "This is a national park"}], stateShow: [{ name: "Alaska" }] })
   });
+
+  it('should render the StateShowContainer and associated ParkShowContainers', () => {
+    wrapper.setState({ parks: parks, stateObject: stateObject })
+    expect(wrapper.state()).toEqual(
+      {
+        stateObject: {
+          name: "Alaska",
+          description: "Kind of cold"
+        },
+        parks: [
+          {
+            name: 'Glacier Bay',
+            description: "Nice"
+          },
+          {
+            name: 'Denali',
+            description: "Also nice"
+          }
+        ]
+      }
+    )
+  })
 });
