@@ -30,6 +30,7 @@ describe('StateShowContainer', () => {
 
   it('should check the default state of a State\'s national parks', () => {
     expect(wrapper.state()).toEqual({ parks: [], stateObject: {} })
+
   });
 
   it('should render the StateShowContainer and associated ParkShowContainers', () => {
