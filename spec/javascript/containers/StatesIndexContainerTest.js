@@ -20,12 +20,10 @@ describe('StatesIndexContainer', () => {
 
 
   it('should check the default state of states', () => {
-
     expect(wrapper.state()).toEqual({ states: [] })
-  })
+  });
 
   it('should render a StateTile component', () => {
-
     wrapper.setState({ states: states })
     expect(wrapper.state()).toEqual({ states: [{ id: 1, name: 'Alaska', abbreviation: 'AK', description: "This is Alaska!" }] })
   });
