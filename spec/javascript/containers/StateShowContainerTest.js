@@ -2,7 +2,7 @@ import React from 'react';
 import StateShowContainer from '../../../app/javascript/react/container/StateShowContainer'
 import ParkShowContainer from '../../../app/javascript/react/container/ParkShowContainer'
 import testHelper from '../testHelper'
-import {BrowserRouter} from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 
 describe('StateShowContainer', () => {
   let wrapper
@@ -28,12 +28,11 @@ describe('StateShowContainer', () => {
       );
   });
 
-  it('should check the default state of a State\'s national park', () => {
-
+  it('should check the default state of a State\'s national parks', () => {
     expect(wrapper.state()).toEqual({ parks: [], stateObject: {} })
-  })
+  });
 
-  it('should render the relevant ParkTiles', () => {
+  it('should render the StateShowContainer and associated ParkShowContainers', () => {
     wrapper.setState({ parks: parks, stateObject: stateObject })
     expect(wrapper.state()).toEqual(
       {
@@ -51,6 +50,7 @@ describe('StateShowContainer', () => {
             description: "Also nice"
           }
         ]
-      })
-  });
+      }
+    )
+  })
 });
