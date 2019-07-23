@@ -8,21 +8,18 @@ describe('StateTile', () => {
   let wrapper
 
   beforeEach(() => {
-    jasmineEnzyme();
 
     wrapper = mount(
       <BrowserRouter>
         <StateTile
           id={1}
-          abbrevation={"AK"}
+          abbreviation={"AK"}
         />
       </BrowserRouter>
       );
   });
 
   it("should be a link to the state show page", () => {
-    console.log(wrapper.text())
     expect(wrapper.find("Link").props()["to"]).toBe("/states/1")
   })
-
 });

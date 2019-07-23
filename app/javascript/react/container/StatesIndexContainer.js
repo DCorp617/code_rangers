@@ -34,13 +34,12 @@ render(){
       <StateTile
         key={state.id}
         id={state.id}
-        abbrevation={state.abbrevation}
+        abbreviation={state.abbreviation}
       />
     )
   })
   return(
     <div>
-      <h1>Hey</h1>
       {us_states}
     </div>
   )
