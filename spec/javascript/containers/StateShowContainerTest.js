@@ -33,7 +33,7 @@ describe('StateShowContainer', () => {
     expect(wrapper.state()).toEqual({ parks: [], stateObject: {} })
   })
 
-  it('should render a ParkShowContainer', () => {
+  it('should render the relevant ParkTiles', () => {
     wrapper.setState({ parks: parks, stateObject: stateObject })
     expect(wrapper.state()).toEqual(
       {
