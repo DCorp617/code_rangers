@@ -31,9 +31,7 @@ class StateShowContainer extends Component {
       return(
         <div>
           {this.state.stateShow.name}
-          <div>
           {this.state.stateShow.description}
-          </div>
         </div>
       )
     }

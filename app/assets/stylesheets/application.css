@@ -15,3 +15,11 @@
  *= require foundation_and_overrides
 
  */
+
+ .state, .state a:visited {
+   fill: #384634;
+ }
+
+ .state a:hover {
+   fill: #E58552;
+ }
