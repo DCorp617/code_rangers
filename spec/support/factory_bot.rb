@@ -9,4 +9,17 @@ FactoryBot.define do
     last_name { 'brown' }
     home_state { 'PA'}
   end
+
+  factory :state do
+    name { 'Mississippi' }
+    abbreviation { 'MS' }
+    description { 'Mississippi river, we got rivers' }
+    id { 1 }
+  end
+
+  factory :random_park, class: Park do
+    name { Faker::Lorem.sentence }
+    description { Faker::Lorem.sentence }
+    state_id { 1 }
+  end
 end
