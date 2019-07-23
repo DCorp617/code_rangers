@@ -45,6 +45,10 @@ module.exports = function(config) {
               path.resolve(__dirname, '..')
             ],
             loader: 'json-loader'
+          },
+          {
+            test: /\.svg$/,
+            loader: 'svg-inline-loader'
           }
         ]
       },
