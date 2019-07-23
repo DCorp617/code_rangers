@@ -14,6 +14,7 @@ FactoryBot.define do
     name { 'Mississippi' }
     abbreviation { 'MS' }
     description { 'Mississippi river, we got rivers' }
+    svg { "4-4-4-2-3-1-7-7-74-62-7-2-3-4-3-10"}
     id { 1 }
   end
 
