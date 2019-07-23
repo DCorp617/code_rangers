@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import StateTile from '../components/StateTile'
+import VoteTile from '../components/VoteTile'
+
 
 class StatesIndexContainer extends Component {
   constructor(props) {
@@ -41,6 +43,7 @@ render(){
   return(
     <div>
       {us_states}
+      <VoteTile/>
     </div>
   )
   }
