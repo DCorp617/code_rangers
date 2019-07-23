@@ -32,3 +32,11 @@ body {
   margin-left: 1rem;
   color: #384634
 }
+
+.state, .state a:visited {
+  fill: #384634;
+}
+
+.state a:hover {
+  fill: #E58552;
+}

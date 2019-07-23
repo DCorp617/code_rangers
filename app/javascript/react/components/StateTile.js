@@ -3,9 +3,11 @@ import { Link } from "react-router-dom"
 
 const StateTile = props => {
   return(
-    <div className="state">
-      <Link to={`/states/${props.id}`}>{props.abbreviation}</Link>
-    </div>
+    <a href={`/states/${props.id}`}>
+      <path id={props.abbreviation} d={props.path}>
+        <title>{props.name}</title>
+      </path>
+    </a>
   )
 }
 
