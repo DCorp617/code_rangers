@@ -7,7 +7,7 @@ class StatesIndexContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      states: [],
+      states: []
     }
   }
 
