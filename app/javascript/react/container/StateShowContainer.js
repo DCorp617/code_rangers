@@ -1,10 +1,11 @@
 import React, { Component } from "react"
+import ParkShowContainer from './ParkShowContainer'
 
 class StateShowContainer extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        stateShow: {}
+        stateObject: {}
       }
     }
 
@@ -21,17 +22,34 @@ class StateShowContainer extends Component {
           }
         })
         .then(response => response.json())
-        .then(state => {
-          this.setState({ stateShow: state })
+        .then(stateHash => {
+          this.setState({ stateObject: stateHash.state })
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
     render(){
+      let nat_parks = null
+
+      if (this.state.stateObject.parks){
+        nat_parks = this.state.stateObject.parks.map(park => {
+          return(
+            <ParkShowContainer
+            key={park.id}
+            parkName={park.name}
+            description={park.description}
+            />
+          )
+        })
+      }
+
       return(
         <div>
-          {this.state.stateShow.name}
-          {this.state.stateShow.description}
+          <div>
+            <h1 className="state-name">{this.state.stateObject.name}</h1>
+            {this.state.stateObject.description}
+          </div>
+          {nat_parks}
         </div>
       )
     }
