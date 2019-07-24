@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import StateTile from '../components/StateTile'
-import VoteTile from '../components/VoteTile'
-
 
 class StatesIndexContainer extends Component {
   constructor(props) {
@@ -34,16 +32,15 @@ render(){
   let us_states = this.state.states.map(state => {
     return(
       <StateTile
-        key={state.id}
-        id={state.id}
-        abbreviation={state.abbreviation}
+      key={state.id}
+      id={state.id}
+      abbreviation={state.abbreviation}
       />
     )
   })
   return(
     <div>
       {us_states}
-      <VoteTile/>
     </div>
   )
   }

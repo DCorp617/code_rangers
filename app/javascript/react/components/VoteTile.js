@@ -53,12 +53,12 @@ class VoteTile extends Component {
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
 
-    // if(this.state.upVote === false) {
-    //   this.setState({upVote: true, downVote: false})
-    // }
-    // else {
-    //   this.setState({upVote: false, downVote: false})
-    // }
+    if(this.state.upVote === false) {
+      this.setState({upVote: true, downVote: false})
+    }
+    else {
+      this.setState({upVote: false, downVote: false})
+    }
   }
 
   handleDownVote() {
@@ -81,12 +81,12 @@ class VoteTile extends Component {
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
 
-    // if(this.state.downVote === false) {
-    //   this.setState({upVote: false, downVote: true})
-    // }
-    // else {
-    //   this.setState({upVote: false, downVote: false})
-    // }
+    if(this.state.downVote === false) {
+      this.setState({upVote: false, downVote: true})
+    }
+    else {
+      this.setState({upVote: false, downVote: false})
+    }
   }
 
   render() {
