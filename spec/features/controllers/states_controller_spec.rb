@@ -27,7 +27,6 @@ RSpec.describe Api::V1::StatesController, type: :controller do
       before { get '/api/v1/states/1' }
 
       it 'returns individual state' do
-        binding.pry
         expect(JSON.parse(response.body).size).to eq(1)
       end
 
