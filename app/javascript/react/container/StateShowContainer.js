@@ -6,8 +6,7 @@ class StateShowContainer extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        stateObject: {},
-        parks: []
+        stateObject: {}
       }
     }
 
@@ -25,7 +24,7 @@ class StateShowContainer extends Component {
         })
         .then(response => response.json())
         .then(stateHash => {
-          this.setState({ stateObject: stateHash.state, parks: stateHash.state.parks })
+          this.setState({ stateObject: stateHash.state })
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
     }

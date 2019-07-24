@@ -11,10 +11,10 @@ describe('StateShowContainer', () => {
 
   beforeEach(() => {
     stateObject = {
-      name: "Alaska", description: "Kind of cold"
-    }
-    parks = [
-      { name: "Glacier Bay",
+      name: "Alaska",
+      description: "Kind of cold",
+      parks: [
+        { name: "Glacier Bay",
         description: "Nice"
       },
       {
@@ -22,6 +22,7 @@ describe('StateShowContainer', () => {
         description: "Also nice"
       }
     ]
+    }
 
     wrapper = shallow(
         <StateShowContainer />
@@ -29,28 +30,28 @@ describe('StateShowContainer', () => {
   });
 
   it('should check the default state of a State\'s national parks', () => {
-    expect(wrapper.state()).toEqual({ parks: [], stateObject: {} })
+    expect(wrapper.state()).toEqual({ stateObject: {} })
 
   });
 
   it('should render the StateShowContainer and associated ParkShowContainers', () => {
-    wrapper.setState({ parks: parks, stateObject: stateObject })
+    wrapper.setState({ stateObject: stateObject })
     expect(wrapper.state()).toEqual(
       {
         stateObject: {
           name: "Alaska",
-          description: "Kind of cold"
-        },
-        parks: [
-          {
-            name: 'Glacier Bay',
-            description: "Nice"
-          },
-          {
-            name: 'Denali',
-            description: "Also nice"
-          }
-        ]
+          description: "Kind of cold",
+          parks: [
+            {
+              name: 'Glacier Bay',
+              description: "Nice"
+            },
+            {
+              name: 'Denali',
+              description: "Also nice"
+            }
+          ]
+        }
       }
     )
   })
