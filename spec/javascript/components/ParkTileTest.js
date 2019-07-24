@@ -19,7 +19,6 @@ describe('ParkTile', () => {
   })
 
   it('should be a link to the park show page', () => {
-    debugger
     expect(wrapper.find("Link").props()["to"]).toBe(`/states/1/parks/1`)
   });
 });
