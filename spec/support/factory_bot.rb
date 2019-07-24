@@ -19,7 +19,7 @@ FactoryBot.define do
   end
 
   factory :park do
-    name { 'Big sPark' }
+    name { 'Denali' }
     description { 'Nice big spark' }
     state_id { 1 }
     id { 42 }
