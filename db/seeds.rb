@@ -56,7 +56,6 @@ Park.create([
   { :name => 'Katmai National Park and Preserve', :state_id => 2, :description => 'This is a national park'},
   { :name => 'Kenai Fjords', :state_id => 2, :description => 'This is a national park'},
   { :name => 'Lake Clark', :state_id => 2, :description => 'This is a national park'},
-  { :name => 'Wrangell–St. Elias National Park and Preserve', :state_id => 2, :description => 'This is a national park'},
   { :name => 'Denali', :state_id => 2, :description => 'This is a national park'},
   { :name => 'Kobuk Valley', :state_id => 2, :description => 'This is a national park'},
   { :name => 'Gates of the Artic', :state_id => 2, :description => 'This is a national park'},

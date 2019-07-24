@@ -30,16 +30,19 @@ class StateShowContainer extends Component {
     }
 
     render(){
-      let nat_parks = this.state.parks.map(park => {
-        return(
-          <ParkTile
+      let nat_parks;
+      if(this.state.stateObject.id) {
+        nat_parks = this.state.stateObject.parks.map(park => {
+          return(
+            <ParkTile
             key={park.id}
             id={park.id}
             stateId={park.state_id}
             parkName={park.name}
-          />
-        )
-      })
+            />
+          )
+        })
+      }
 
       return(
         <div>
