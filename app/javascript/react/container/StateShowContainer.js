@@ -51,7 +51,6 @@ class StateShowContainer extends Component {
           <div>
             <Link to={`/`}>Back</Link>
           </div>
-          <div>
           {nat_parks}
         </div>
       )
