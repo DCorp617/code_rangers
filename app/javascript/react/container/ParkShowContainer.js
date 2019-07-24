@@ -24,7 +24,7 @@ class ParkShowContainer extends Component {
       })
       .then(response => response.json())
       .then(park => {
-        this.setState({ parkShow: park })
+        this.setState({ parkShow: park.park })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }

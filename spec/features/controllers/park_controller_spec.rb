@@ -1,16 +1,28 @@
 require "rails_helper"
 
-describe "get all national parks route", :type => :request do
-  let!(:state) { FactoryBot.create(:state) }
-  let!(:parks) { FactoryBot.create_list(:random_park, 5) }
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+end
 
-  before { get '/api/v1/states/1/parks' }
+RSpec.describe Api::V1::ParksController, type: :controller do
 
-  it 'returns all parks' do
-    expect(JSON.parse(response.body).size).to eq(5)
-  end
+    describe "GET #show" do
 
-  it 'returns status code 200' do
-    expect(response).to have_http_status(:success)
+    let!(:state) { FactoryBot.create(:state) }
+    let!(:park) { FactoryBot.create(:park) }
+
+    context "when user goes to park show page" do
+      before {get :show, params: { id: 42 , state_id: 1} }
+      
+      it "returns a specific park" do
+        get :show, params: { id: 42 , state_id: 1}
+        expect(JSON.parse(response.body).size).to eq(1)
+      end
+
+      it 'returns status code 200' do
+        get :show, params: { id: 42 , state_id: 1}
+        expect(response).to have_http_status(:success)
+      end
+    end
   end
 end
