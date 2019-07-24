@@ -53,6 +53,7 @@ class StateShowContainer extends Component {
           </div>
           <div>
           {nat_parks}
+          </div>
         </div>
       )
     }

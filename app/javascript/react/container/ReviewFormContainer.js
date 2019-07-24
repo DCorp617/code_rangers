@@ -14,16 +14,73 @@ class ReviewFormContainer extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.handleBodyChange = this.handleBodyChange.bind(this)
     this.handleRatingChange = this.handleRatingChange.bind(this)
-    this.handleClearForm = thiis.handleClearForm.bind(this)
+    this.handleClearForm = this.handleClearForm.bind(this)
+    this.validateBody = this.validateBody.bind(this)
+    this.validateRating = this.validateRating.bind(this)
   }
 
-  handleSubmit() {
+  handleClearForm(event){
+  event.preventDefault();
+    this.setState({
+      reviewDescription: '',
+      reviewRating: []
+    })
+  }
 
+  handleFormSubmit(event){
+    event.preventDefault();
+    if(
+      this.validateBody(this.state.reviewDescription) &&
+      this.validateRating(this.state.reviewRating))
+      {
+        let formPayload = {
+          description: this.state.reviewDescription,
+          rating: this.state.reviewRating
+        }
+        this.props.addNewReview(formPayload);
+        this.handleClearForm(event);
+      }
+  }
+
+  handleBodyChange(event){
+    this.validateBody(event.target.value)
+    this.setState({reviewDescription: event.target.value})
+  }
+
+  handleRatingChange(event){
+    this.validateRating(event.target.value)
+    this.setState({reviewRating: event.target.value})
+  }
+
+  validateBody(input) {
+    if (input.trim() === '') {
+      let newError = { reviewBodyInput: 'You must input a review body.' }
+      this.setState({ errors: Object.assign({}, this.state.errors, newError) })
+      return false
+    } else {
+      let errorState = this.state.errors
+      delete errorState.reviewBodyInput
+      this.setState({ errors: errorState })
+      return true
+    }
+  }
+
+  validateRating(input) {
+    if (input.trim() === '') {
+      let newError = { reviewRatingInput: 'You must input a rating' }
+      this.setState({ errors: Object.assign({}, this.state.errors, newError) })
+      return false
+    } else {
+      let errorState = this.state.errors
+      delete errorState.reviewRatingInput
+      this.setState({ errors: errorState })
+      return true
+    }
   }
 
   render() {
     return(
-      <form onSubmit={this.handleFormSubmit}
+      <form onSubmit={this.handleFormSubmit}>
         <FormBodyField
           handlerFunction={this.handleBodyChange}
           content={this.state.reviewDescription}
@@ -31,7 +88,7 @@ class ReviewFormContainer extends Component {
           name="Description"
         />
         <FormRatingField
-          handlerFunction={this.submit.handleRatingChange}
+          handlerFunction={this.handleRatingChange}
           content={this.state.reviewRating}
           label="Rating"
           name="Rating"
@@ -43,6 +100,7 @@ class ReviewFormContainer extends Component {
       </form>
     )
   }
+
 }
 
 export default ReviewFormContainer
