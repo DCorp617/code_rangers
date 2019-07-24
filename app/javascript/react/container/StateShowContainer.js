@@ -5,8 +5,7 @@ class StateShowContainer extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        stateObject: {},
-        parks: []
+        stateObject: {}
       }
     }
 
@@ -24,22 +23,25 @@ class StateShowContainer extends Component {
         })
         .then(response => response.json())
         .then(stateHash => {
-          this.setState({ stateObject: stateHash.state, parks: stateHash.state.parks })
+          this.setState({ stateObject: stateHash.state })
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
 
     render(){
-      let nat_parks = this.state.parks.map(park => {
+      let nat_parks = null
 
-        return(
-          <ParkShowContainer
+      if (this.state.stateObject.parks){
+        nat_parks = this.state.stateObject.parks.map(park => {
+          return(
+            <ParkShowContainer
             key={park.id}
             parkName={park.name}
             description={park.description}
-          />
-        )
-      })
+            />
+          )
+        })
+      }
 
       return(
         <div>

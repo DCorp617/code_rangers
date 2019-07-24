@@ -1,5 +1,5 @@
 require_relative "../../../models/parsewiki.rb"
-require_relative "../../../models/serializers/state_show_serializer"
+require_relative "../../../models/serializers/state_serializer"
 
 class Api::V1::StatesController < ApplicationController
   before_action :authorize_user, except: [:index, :show]
@@ -13,8 +13,7 @@ class Api::V1::StatesController < ApplicationController
   end
 
   def show
-    render json: State.find(params[:id]),
-    serializer: StateShowSerializer
+    render json: State.find(params[:id]), serializer: StateSerializer
   end
 
   protected

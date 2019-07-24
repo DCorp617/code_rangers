@@ -18,9 +18,23 @@ FactoryBot.define do
     id { 1 }
   end
 
+  factory :park do
+    name { 'Big sPark' }
+    description { 'Nice big spark' }
+    state_id { 1 }
+    id { 42 }
+  end
+
   factory :random_park, class: Park do
     name { Faker::Lorem.sentence }
     description { Faker::Lorem.sentence }
     state_id { 1 }
+  end
+
+  factory :random_state, class: State do
+    name { "Hawaii" }
+    description { Faker::Lorem.sentence }
+    svg { "1.204.304.3-232031-23023219-05430-05430504-54-1" }
+    abbreviation { "HI" }
   end
 end
