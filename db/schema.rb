@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_150838) do
     t.bigint "state_id", null: false
     t.string "name", null: false
     t.text "description", null: false
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_parks_on_state_id"

@@ -5,6 +5,7 @@ class CreateParks < ActiveRecord::Migration[5.2]
 
       t.string :name, null: false
       t.text :description, null: false
+      t.text :image
 
       t.timestamps null: false
     end

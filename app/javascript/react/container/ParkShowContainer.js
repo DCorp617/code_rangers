@@ -12,6 +12,7 @@ class ParkShowContainer extends Component {
   componentDidMount(){
     let parkUrl = this.props.match.url
     let fetchUrl = "/api/v1" + parkUrl
+
     fetch(`${fetchUrl}`)
       .then(response => {
         if(response.ok){
@@ -37,7 +38,10 @@ class ParkShowContainer extends Component {
         </Link>
         <div className="container">
           <h1 className="park">{this.state.parkShow.name}</h1>
+        <section className="image">
           <p>{this.state.parkShow.description}.</p>
+          <img src={this.state.parkShow.image}></img>
+        </section>
         </div>
       </div>
     )

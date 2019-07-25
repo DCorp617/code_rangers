@@ -6,7 +6,7 @@ class Api::V1::ParksController < ApplicationController
     parkId = params[:id]
     park = Park.find(parkId)
     wiki = ParseWiki.new
-    park.update_attributes(description: wiki.intro(park.name))
+    park.update_attributes(description: wiki.intro(park.name), image: wiki.image(park.name))
 
     render json: Park.find(parkId)
   end

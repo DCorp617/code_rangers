@@ -2,6 +2,11 @@ import React, { Component } from "react"
 import ParkTile from '../components/ParkTile'
 import { Link } from "react-router-dom"
 
+var gif;
+var height;
+var width;
+var message;
+
 class StateShowContainer extends Component {
     constructor(props) {
       super(props)
@@ -10,8 +15,10 @@ class StateShowContainer extends Component {
       }
     }
 
+
     componentDidMount(){
       let stateId = this.props.match.params.id
+
       fetch(`/api/v1/states/${stateId}`)
         .then(response => {
           if(response.ok){
@@ -31,10 +38,15 @@ class StateShowContainer extends Component {
 
     render(){
       let nat_parks;
-      let gif = "https://media.giphy.com/media/KKOMG9EB7VqBq/giphy.gif"
-      let height = "500px"
-      let width = "700px"
-      if(this.state.stateObject.id) {
+
+
+      if(this.state.stateObject.parks && this.state.stateObject.parks.length < 1) {
+        gif = "https://media.giphy.com/media/KKOMG9EB7VqBq/giphy.gif"
+        height = "700"
+        width = "500"
+        message = "There are no parks to be found here!"
+      }
+      else if (this.state.stateObject.parks) {
         nat_parks = this.state.stateObject.parks.map(park => {
           return(
             <ParkTile
@@ -59,11 +71,12 @@ class StateShowContainer extends Component {
             </div>
             <div className="list-of-parks">
               <h2>National Parks:</h2>
+              <img src={gif} height={height} width={width}></img>
               <ul>
                 {nat_parks}
               </ul>
-              <img src={gif} height={height} width={width}/>
             </div>
+            <span>{message}</span>
           </div>
         </div>
       )

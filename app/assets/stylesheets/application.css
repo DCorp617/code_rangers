@@ -24,7 +24,7 @@
   padding-top: 0;
 }
 
-.state-name, .list-of-parks h2, .park {
+.state-name, .list-of-parks h2, .park, .logIn {
   font-family: 'Playfair Display', serif;
   color: #384634;
   font-size: 40px;
@@ -34,7 +34,12 @@
   font-size: 30px;
 }
 
-.state-show, .list-of-parks a, .park p {
+.logIn {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.state-show, .list-of-parks a, .park p, span {
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
 }
@@ -46,6 +51,15 @@
 .park-name i {
   padding-right: 1em;
   color: #384634;
+}
+
+section.image {
+  display: flex;
+  flex-direction: row;
+}
+
+.image p {
+  padding-right: 1rem;
 }
 
 .map-container {
@@ -108,6 +122,16 @@ p {
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
 }
+
+.moreLinks {
+  padding-top: 2em;
+}
+
+.moreLinks a {
+  color: #384634;
+  font-family: 'Raleway', sans-serif;
+}
+
 
 @media only screen and (min-width: 40.0625em) {
 
