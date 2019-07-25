@@ -15,9 +15,10 @@
  *= require foundation_and_overrides
 
  */
- @import 'foundation-icons';
- @import "font-awesome-sprockets";
- @import "font-awesome";
+
+.profile-picture {
+
+}
 
 .container {
   padding: 5em;
@@ -39,8 +40,13 @@
   padding-bottom: 1em;
 }
 
-.state-show, .list-of-parks a, .park p, span {
+.state-show, .list-of-parks a, .park p {
   font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+span {
+  font-size: 25px;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -132,13 +138,17 @@ p {
   font-family: 'Raleway', sans-serif;
 }
 
-
 @media only screen and (min-width: 40.0625em) {
 
-  .top-bar-section li:not(.has-form) a:not(.button){
+  .top-bar-section li:not(.has-form) a:not(.button) {
     background: #E58552;
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
+  }
+
+  .top-bar-section ul {
+    display: flex;
+    align-items: center;
   }
 
 }
