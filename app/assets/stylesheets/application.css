@@ -152,3 +152,28 @@ p {
   }
 
 }
+
+input[type="range"] {
+    width: 25%;
+    margin-bottom: 4ex ;
+    box-sizing: border-box;
+}
+datalist {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    margin-top: -23px;
+    padding-top: 0px;
+}
+option {
+    width: 2ex;
+    display: flex;
+    justify-content: center;
+    height: 42px;
+    align-items: end;
+    background-image: url(tick.png);
+    height: 4ex;
+    background-position-y: -15px;
+    background-position-x: center;
+    z-index: -1;
+}

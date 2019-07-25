@@ -30,7 +30,6 @@ class StatesIndexContainer extends Component {
   }
 
 render(){
-
   let us_states = this.state.states.map(state => {
       return(
         <StateTile

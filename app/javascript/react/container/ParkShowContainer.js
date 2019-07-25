@@ -1,12 +1,15 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
+import ReviewFormContainer from "./ReviewFormContainer"
+import ReviewTile from "../components/ReviewTile"
 
 class ParkShowContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      parkShow: {}
+      parkObject: {}
     }
+    this.addNewReview = this.addNewReview.bind(this)
   }
 
   componentDidMount(){
@@ -24,24 +27,66 @@ class ParkShowContainer extends Component {
         }
       })
       .then(response => response.json())
-      .then(park => {
-        this.setState({ parkShow: park.park })
+      .then(parkHash => {
+        this.setState({ parkObject: parkHash.park })
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  addNewReview(formPayload) {
+  let parkID = this.props.match.params.id
+  let fetchUrl = `/api/v1/parks/${parkID}/reviews`
+  fetch(`${fetchUrl}`, {
+    credentials: 'same-origin',
+    method: 'POST',
+    headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+     },
+    body: JSON.stringify(formPayload)
+  })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+         error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(parkHash => {
+      this.setState({ parkObject: parkHash.park })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+}
+
   render(){
+    let reviews;
+    if(this.state.parkObject.id){
+      reviews = this.state.parkObject.reviews.map(review => {
+        return(
+          <ReviewTile
+            key={review.id}
+            id={review.id}
+            rating={review.rating}
+            description={review.description}
+          />
+        )
+      })
+    }
+
     return(
       <div>
-        <Link to={`/states/${this.state.parkShow.state_id}`}>
-          <div className="button">Back</div>
-        </Link>
-        <div className="container">
-          <h1 className="park">{this.state.parkShow.name}</h1>
-        <section className="image">
-          <p>{this.state.parkShow.description}.</p>
-          <img src={this.state.parkShow.image}></img>
-        </section>
+        <h1 className="park-name">{this.state.parkObject.name}</h1>
+        {this.state.parkObject.description}
+        <div>
+        <div className="reviews">
+          {reviews}
+        </div>
+        <h4>Add Review</h4>
+        <ReviewFormContainer addNewReview={this.addNewReview}/>
+        <Link to={`/states/${this.state.parkObject.state_id}`}>Back</Link>
         </div>
       </div>
     )

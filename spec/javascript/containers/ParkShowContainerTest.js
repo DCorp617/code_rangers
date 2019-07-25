@@ -5,10 +5,10 @@ import { BrowserRouter } from "react-router-dom"
 
 describe('ParkShowContainer', () => {
   let wrapper
-  let parkShow
+  let parkObject
 
   beforeEach(() => {
-    parkShow = [
+    parkObject = [
       {name: 'Glacier Bay', state_id: 2, description: 'This is a national park'}
     ]
 
@@ -19,6 +19,6 @@ describe('ParkShowContainer', () => {
 
   it('should check the default state of a national park', () => {
 
-    expect(wrapper.state()).toEqual({ parkShow: {} })
+    expect(wrapper.state()).toEqual({ parkObject: {} })
   })
 })
