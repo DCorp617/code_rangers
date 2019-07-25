@@ -9,6 +9,14 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :parks, only: [:show] do
+        resources :reviews, only: [:create, :new, :index]
+      end
+    end
+  end
+
   get '*page', to: 'static_pages#index', constraints: ->(req) do
     !req.xhr? && req.format.html?
   end
