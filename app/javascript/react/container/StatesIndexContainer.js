@@ -23,9 +23,9 @@ class StatesIndexContainer extends Component {
       }
     })
     .then(response => response.json())
-    .then(body => {
-        this.setState({ states: body.states })
-      })
+    .then(states => {
+      this.setState({ states: states.states })
+    })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 

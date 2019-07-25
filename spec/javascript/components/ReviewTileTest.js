@@ -23,5 +23,4 @@ describe('ReviewTile', () => {
   expect(wrapper.find('p').text()).toBe("Not that great");
   });
 
-
 });

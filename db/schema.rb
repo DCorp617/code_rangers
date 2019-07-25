@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_150838) do
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "svg", null: false
+    t.text "svg"
   end
 
   create_table "users", force: :cascade do |t|

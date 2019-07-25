@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import ParkShowContainer from './ParkShowContainer'
+import ParkTile from '../components/ParkTile'
+import { Link } from "react-router-dom"
 
 class StateShowContainer extends Component {
     constructor(props) {
@@ -29,15 +30,15 @@ class StateShowContainer extends Component {
     }
 
     render(){
-      let nat_parks = null
-
-      if (this.state.stateObject.parks){
+      let nat_parks;
+      if(this.state.stateObject.id) {
         nat_parks = this.state.stateObject.parks.map(park => {
           return(
-            <ParkShowContainer
+            <ParkTile
             key={park.id}
+            id={park.id}
+            stateId={park.state_id}
             parkName={park.name}
-            description={park.description}
             />
           )
         })
@@ -48,6 +49,9 @@ class StateShowContainer extends Component {
           <div>
             <h1 className="state-name">{this.state.stateObject.name}</h1>
             {this.state.stateObject.description}
+          </div>
+          <div>
+            <Link to={`/`}>Back</Link>
           </div>
           {nat_parks}
         </div>

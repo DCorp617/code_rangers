@@ -4,7 +4,6 @@ import StateTile from '../../../app/javascript/react/components/StateTile'
 import testHelper from '../testHelper'
 import {BrowserRouter} from "react-router-dom"
 
-
 describe('StatesIndexContainer', () => {
   let wrapper
   let states
