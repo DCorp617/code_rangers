@@ -4,7 +4,6 @@ import StateTile from '../../../app/javascript/react/components/StateTile'
 import testHelper from '../testHelper'
 import {BrowserRouter} from "react-router-dom"
 
-
 describe('StatesIndexContainer', () => {
   let wrapper
   let states
@@ -21,12 +20,10 @@ describe('StatesIndexContainer', () => {
 
 
   it('should check the default state of states', () => {
-
     expect(wrapper.state()).toEqual({ states: [] })
-  })
+  });
 
   it('should render a StateTile component', () => {
-
     wrapper.setState({ states: states })
     expect(wrapper.state()).toEqual({ states: [{ id: 1, name: 'Alaska', abbreviation: 'AK', description: "This is Alaska!" }] })
   });

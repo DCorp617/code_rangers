@@ -8,4 +8,5 @@ describe Park do
   it { should_not have_valid(:description).when(nil, "") }
 
   it { should have_many :reviews }
+  it { should belong_to :state }
 end

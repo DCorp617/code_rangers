@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :states, only: [:index, :show]
+      resources :states, only: [:index, :show] do
+        resources :parks, only: [:index, :show]
+      end
     end
   end
 

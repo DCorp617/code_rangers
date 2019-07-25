@@ -11,5 +11,5 @@ describe State do
   it { should have_valid(:abbreviation).when("CA") }
   it { should_not have_valid(:abbreviation).when(nil, "") }
 
-  it { should have_many :cities}
+  it { should have_many :parks}
 end

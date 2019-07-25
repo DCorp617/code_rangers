@@ -24,22 +24,24 @@ class StatesIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(states => {
-      this.setState({ states: states })
+      this.setState({ states: states.states })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
 render(){
+
   let us_states = this.state.states.map(state => {
-    return(
+      return(
         <StateTile
-          key={state.id}
-          id={state.id}
-          abbreviation={state.abbreviation}
-          path={state.svg}
+        key={state.id}
+        id={state.id}
+        abbreviation={state.abbreviation}
+        path={state.svg}
         />
-    )
-  })
+      )
+    })
+
   return(
     <section className="map-container">
       <h1 className="title">Park Lark</h1>
