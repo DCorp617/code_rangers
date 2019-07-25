@@ -31,6 +31,9 @@ class StateShowContainer extends Component {
 
     render(){
       let nat_parks;
+      let gif = "https://media.giphy.com/media/KKOMG9EB7VqBq/giphy.gif"
+      let height = "500px"
+      let width = "700px"
       if(this.state.stateObject.id) {
         nat_parks = this.state.stateObject.parks.map(park => {
           return(
@@ -46,14 +49,22 @@ class StateShowContainer extends Component {
 
       return(
         <div>
-          <div>
-            <h1 className="state-name">{this.state.stateObject.name}</h1>
-            {this.state.stateObject.description}
+          <Link to={`/`}>
+            <div className="button">Back</div>
+          </Link>
+          <div className="container">
+            <div className="state-show">
+              <h1 className="state-name">{this.state.stateObject.name}</h1>
+              <p>{this.state.stateObject.description}!</p>
+            </div>
+            <div className="list-of-parks">
+              <h2>National Parks:</h2>
+              <ul>
+                {nat_parks}
+              </ul>
+              <img src={gif} height={height} width={width}/>
+            </div>
           </div>
-          <div>
-            <Link to={`/`}>Back</Link>
-          </div>
-          {nat_parks}
         </div>
       )
     }

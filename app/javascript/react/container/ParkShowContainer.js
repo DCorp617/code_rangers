@@ -32,10 +32,12 @@ class ParkShowContainer extends Component {
   render(){
     return(
       <div>
-        <h1 className="park-name">{this.state.parkShow.name}</h1>
-        {this.state.parkShow.description}
-        <div>
-        <Link to={`/states/${this.state.parkShow.state_id}`}>Back</Link>
+        <Link to={`/states/${this.state.parkShow.state_id}`}>
+          <div className="button">Back</div>
+        </Link>
+        <div className="container">
+          <h1 className="park">{this.state.parkShow.name}</h1>
+          <p>{this.state.parkShow.description}.</p>
         </div>
       </div>
     )
