@@ -15,6 +15,7 @@ class ParkShowContainer extends Component {
   componentDidMount(){
     let parkUrl = this.props.match.url
     let fetchUrl = "/api/v1" + parkUrl
+
     fetch(`${fetchUrl}`)
       .then(response => {
         if(response.ok){

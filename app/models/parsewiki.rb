@@ -7,6 +7,8 @@ class ParseWiki
     self.class.base_uri "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles="
     if state == true
       subject = subject + " (U.S. state)"
+    elsif
+      subject = subject + " National Park"
     end
     query_string = subject.gsub(' ','%20')
     wiki_object = self.class.get(query_string)
@@ -20,6 +22,7 @@ class ParseWiki
 
   def image(subject,picture_size = 400)
     self.class.base_uri "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&redirects=1&format=json&"
+    subject = subject + " National Park"
     query_string = subject.gsub(' ','%20')
     image_query = "titles=#{query_string}&pithumbsize=#{picture_size}"
     wiki_object = self.class.get(image_query)

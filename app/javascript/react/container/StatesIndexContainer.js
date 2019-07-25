@@ -42,8 +42,10 @@ render(){
     })
 
   return(
-    <div>
-      <div className="map_of_usa">
+    <section className="map-container">
+      <h1 className="title">Park Lark</h1>
+      <p>Select a state to view its national parks:</p>
+      <div className="map-of-usa">
         <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593">
         <g className="state">
           {us_states}
@@ -51,7 +53,7 @@ render(){
         <path id="frames" fill="none" stroke="#A9A9A9" strokeWidth="2" d="M215 493v55l36 45M0 425h147l68 68h85l54 54v46"/>
         </svg>
       </div>
-    </div>
+    </section>
   )
   }
 }

@@ -3,6 +3,8 @@
 <head>
   <title>CodeRangers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -14,7 +16,7 @@
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">CodeRangers</a></h1>
+        <h1><a href="/"><i class="fa fa-tree"></i></a></h1>
       </li>
     </ul>
 
@@ -22,7 +24,7 @@
       <ul class="right">
         <% if user_signed_in? %>
           <% if current_user.profile_photo.url %>
-            <li><%= image_tag current_user.profile_photo.url, size: "30x30" %></li>
+            <li><%= image_tag current_user.profile_photo.url, size: "40x40" %></li>
           <% end %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
           <% if current_user.admin? %>

@@ -15,29 +15,142 @@
  *= require foundation_and_overrides
 
  */
-body {
-  background-color: #967C74
+
+.profile-picture {
+
 }
 
-.top-bar {
+.container {
+  padding: 5em;
+  padding-top: 0;
+}
+
+.state-name, .list-of-parks h2, .park, .logIn {
+  font-family: 'Playfair Display', serif;
+  color: #384634;
+  font-size: 40px;
+}
+
+.list-of-parks h2 {
+  font-size: 30px;
+}
+
+.logIn {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.state-show, .list-of-parks a, .park p {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+span {
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.park-name {
+  list-style: none;
+}
+
+.park-name i {
+  padding-right: 1em;
+  color: #384634;
+}
+
+section.image {
+  display: flex;
+  flex-direction: row;
+}
+
+.image p {
+  padding-right: 1rem;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.map-of-usa {
+  padding-top: 50px;
+}
+
+.button {
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
+.button:hover {
+  background: #967C74;
+}
+
+.button a {
+  color: #000000;
+}
+
+.top-bar, .top-bar a {
   background-color: #E58552;
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-size: 25px;
 }
 
 .park-name {
   margin-left: 1rem;
-  color: #99B3CF
 }
 
-.state-name {
-  margin-left: 1rem;
-  color: #384634
+.park-name a {
+  color: #E58552;
 }
-.state, .state a:visited {
-  fill: #384634;
+
+.state a, .state a:visited {
+ fill: #384634;
 }
 
 .state a:hover {
-  fill: #E58552;
+ fill: #E58552;
+}
+
+.title {
+  padding-top: 50px;
+  color: #E58552;
+  font-size: 80px;
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.moreLinks {
+  padding-top: 2em;
+}
+
+.moreLinks a {
+  color: #384634;
+  font-family: 'Raleway', sans-serif;
+}
+
+@media only screen and (min-width: 40.0625em) {
+
+  .top-bar-section li:not(.has-form) a:not(.button) {
+    background: #E58552;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+  }
+
+  .top-bar-section ul {
+    display: flex;
+    align-items: center;
+  }
+
 }
 
 input[type="range"] {
