@@ -153,6 +153,7 @@ section.image {
   border: 1px solid #384634;
   border-radius: 5px;
   padding: 1em;
+  margin-bottom: .5em;
 }
 
 .review-tile p {

@@ -85,8 +85,10 @@ class ReviewFormContainer extends Component {
       errorItems = Object.values(this.state.errors).map(error => {
         return(<li key={error}>{error}</li>)
       })
-      errorDiv = <div className="callout alert">{errorItems}</div>
+      errorDiv = <div className="callout alert">{errorItems[0]}</div>
+      errorDiv = errorDiv.props.children.key
     }
+
 
     return(
       <form onSubmit={this.handleFormSubmit}>
