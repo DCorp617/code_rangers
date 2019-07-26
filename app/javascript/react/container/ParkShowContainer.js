@@ -69,14 +69,12 @@ class ParkShowContainer extends Component {
       reviews_text = "Reviews"
       reviews = this.state.parkObject.reviews.map(review => {
         return(
-          <div className="review-tile">
             <ReviewTile
-            key={review.reviewable_id}
+            key={review.id}
             id={review.id}
             rating={review.rating}
             description={review.description}
             />
-          </div>
         )
       })
     }

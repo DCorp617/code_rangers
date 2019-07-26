@@ -5,14 +5,14 @@ const ReviewTile = props => {
 
   for (let i = 0; i < 5; i++){
     if (i < props.rating){
-    icons.push(<i className="fa fa-tree orange"></i>)
+    icons.push(<i className="fa fa-tree orange" key={i}></i>)
     } else {
-    icons.push(<i className="fa fa-tree grey"></i>)
+    icons.push(<i className="fa fa-tree grey" key={i}></i>)
     }
   }
 
   return(
-    <div className="review">
+    <div className="review-tile">
       <div>{icons}</div>
       <p>{props.description}</p>
     </div>
