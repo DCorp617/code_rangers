@@ -112,11 +112,11 @@ Park.create([
   ])
 
   User.create([
-    { :id => 1, :email => 'pink@powerrangers.com', :first_name => 'Pink', :last_name => 'Ranger', :home_state => 'OH', :password => '123456'},
-    { :id => 2, :email => 'green@powerrangers.com', :first_name => 'Green', :last_name => 'Ranger', :home_state => 'MN', :password => '123456'},
-    { :id => 3, :email => 'yellow@powerrangers.com', :first_name => 'Yellow', :last_name => 'Ranger', :home_state => 'MO', :password => '123456'},
-    { :id => 4, :email => 'black@powerrangers.com', :first_name => 'Black', :last_name => 'Ranger', :home_state => 'KY', :password => '123456'},
-    { :id => 5, :email => 'red@powerrangers.com', :first_name => 'Red', :last_name => 'Ranger', :home_state => 'LO', :password => '123456'}
+    { :email => 'pink@powerrangers.com', :first_name => 'Pink', :last_name => 'Ranger', :home_state => 'OH', :password => '123456'},
+    { :email => 'green@powerrangers.com', :first_name => 'Green', :last_name => 'Ranger', :home_state => 'MN', :password => '123456'},
+    { :email => 'yellow@powerrangers.com', :first_name => 'Yellow', :last_name => 'Ranger', :home_state => 'MO', :password => '123456'},
+    { :email => 'black@powerrangers.com', :first_name => 'Black', :last_name => 'Ranger', :home_state => 'KY', :password => '123456'},
+    { :email => 'red@powerrangers.com', :first_name => 'Red', :last_name => 'Ranger', :home_state => 'LO', :password => '123456'}
   ])
 
   Review.create([
