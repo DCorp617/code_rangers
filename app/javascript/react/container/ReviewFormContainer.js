@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import FormBodyField from '../components/FormBodyField'
 import FormRatingField from '../components/FormRatingField'
 
-
 class ReviewFormContainer extends Component {
   constructor(props) {
     super(props)
@@ -89,7 +88,6 @@ class ReviewFormContainer extends Component {
       errorDiv = <div className="callout alert">{errorItems}</div>
     }
 
-
     return(
       <form onSubmit={this.handleFormSubmit}>
         {errorDiv}
@@ -106,8 +104,8 @@ class ReviewFormContainer extends Component {
           name="Rating"
         />
         <div className="button-group">
-          <button className="button" onClick={this.handleClearForm}>Clear</button>
-          <input className="button" type="submit" value="Submit" />
+          <button className="form-button" onClick={this.handleClearForm}>Clear</button>
+          <input className="form-button submit" type="submit" value="Submit" />
         </div>
       </form>
     )

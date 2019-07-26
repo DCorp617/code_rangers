@@ -63,30 +63,46 @@ class ParkShowContainer extends Component {
 
   render(){
     let reviews;
-    if(this.state.parkObject.id){
+    let reviews_text;
+
+    if (this.state.parkObject.id && this.state.parkObject.reviews.length > 0) {
+      reviews_text = "Reviews"
       reviews = this.state.parkObject.reviews.map(review => {
         return(
-          <ReviewTile
-            key={review.id}
+          <div className="review-tile">
+            <ReviewTile
+            key={review.reviewable_id}
+            //our ids are not unique
             id={review.id}
             rating={review.rating}
             description={review.description}
-          />
+            />
+          </div>
         )
       })
     }
 
     return(
       <div>
-        <h1 className="park-name">{this.state.parkObject.name}</h1>
-        {this.state.parkObject.description}
-        <div>
-        <div className="reviews">
-          {reviews}
-        </div>
-        <h4>Add Review</h4>
-        <ReviewFormContainer addNewReview={this.addNewReview}/>
-        <Link to={`/states/${this.state.parkObject.state_id}`}>Back</Link>
+      <Link to={`/states/${this.state.parkObject.state_id}`}>
+      <div className="button">Back</div>
+      </Link>
+        <div className="container">
+          <h1 className="park">{this.state.parkObject.name}</h1>
+          <section className="image">
+            <p>{this.state.parkObject.description}.</p>
+            <img src={this.state.parkObject.image}></img>
+          </section>
+          <div className="review-form-container">
+            <h3>{reviews_text}</h3>
+            <div className="reviews">
+            {reviews}
+            </div>
+            <div className="add-a-review">
+              <h2>Add Review</h2>
+              <ReviewFormContainer addNewReview={this.addNewReview}/>
+            </div>
+          </div>
         </div>
       </div>
     )

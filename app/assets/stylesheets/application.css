@@ -16,10 +16,6 @@
 
  */
 
-.profile-picture {
-
-}
-
 .container {
   padding: 5em;
   padding-top: 0;
@@ -31,8 +27,20 @@
   font-size: 40px;
 }
 
+h3 {
+  font-family: 'Playfair Display', serif;
+  color: #384634;
+  font-size: 30px;
+}
+
 .list-of-parks h2 {
   font-size: 30px;
+}
+
+.review-form-container h2 {
+  font-family: 'Playfair Display', serif;
+  color: #384634;
+  font-size: 25px;
 }
 
 .logIn {
@@ -40,7 +48,7 @@
   padding-bottom: 1em;
 }
 
-.state-show, .list-of-parks a, .park p {
+.state-show, .list-of-parks a, .park p, h4 {
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
 }
@@ -75,6 +83,10 @@ section.image {
   flex-direction: column;
 }
 
+.add-a-review {
+  padding-top: 2em;
+}
+
 .map-of-usa {
   padding-top: 50px;
 }
@@ -84,6 +96,14 @@ section.image {
   color: #000000;
   border-radius: 5px;
   margin-bottom: 0;
+}
+
+.orange {
+  color: #E58552;
+}
+
+.grey {
+  color: #967C74;
 }
 
 .button:hover {
@@ -124,10 +144,42 @@ section.image {
   font-family: 'Playfair Display', serif;
 }
 
-p {
+.review-form-container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.review-tile {
+  border: 1px solid #384634;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.review-tile p {
+  margin: 0;
+}
+
+p, .form-button, .form-button .submit {
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
 }
+
+.form-button, .form-button .submit {
+  padding: 1em;
+  background-color: #384634;
+  color: #FFFFFF;
+  margin: .25em;
+  border: 0;
+  font-size: 15px;
+}
+
+.form-button:hover, .form-button .submit:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 300ms ease-out;
+}
+
 
 .moreLinks {
   padding-top: 2em;

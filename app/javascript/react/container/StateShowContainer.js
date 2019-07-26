@@ -15,7 +15,6 @@ class StateShowContainer extends Component {
       }
     }
 
-
     componentDidMount(){
       let stateId = this.props.match.params.id
 
@@ -38,7 +37,6 @@ class StateShowContainer extends Component {
 
     render(){
       let nat_parks;
-
 
       if(this.state.stateObject.parks && this.state.stateObject.parks.length < 1) {
         gif = "https://media.giphy.com/media/KKOMG9EB7VqBq/giphy.gif"
