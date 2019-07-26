@@ -110,3 +110,21 @@ Park.create([
   { :name => 'Yellowstone', :state_id => 12, :description => 'This is a national park'},
   { :name => 'Grand Teton', :state_id => 50, :description => 'This is a national park'}
   ])
+
+  User.create([
+    { :id => 1, :email => 'pink@powerrangers.com', :first_name => 'Pink', :last_name => 'Ranger', :home_state => 'OH', :password => '123456'},
+    { :id => 2, :email => 'green@powerrangers.com', :first_name => 'Green', :last_name => 'Ranger', :home_state => 'MN', :password => '123456'},
+    { :id => 3, :email => 'yellow@powerrangers.com', :first_name => 'Yellow', :last_name => 'Ranger', :home_state => 'MO', :password => '123456'},
+    { :id => 4, :email => 'black@powerrangers.com', :first_name => 'Black', :last_name => 'Ranger', :home_state => 'KY', :password => '123456'},
+    { :id => 5, :email => 'red@powerrangers.com', :first_name => 'Red', :last_name => 'Ranger', :home_state => 'LO', :password => '123456'}
+  ])
+
+  Review.create([
+    { :user => User.first, :reviewable => Park.find(56), :rating => 4, description: 'Great park, not as yellow as I thought but still pretty dope'},
+    { :user => User.second, :reviewable => Park.find(56), :rating => 5, description: 'More yellow than I could have ever imagined, loved it so much'},
+    { :user => User.third, :reviewable => Park.find(56), :rating => 2, description: 'Almost fell into a geyser'},
+    { :user => User.second, :reviewable => Park.find(19), :rating => 2, description: 'WOW these trees were so tall!!! You have to see the trees!'},
+    { :user => User.third, :reviewable => Park.find(40), :rating => 5, description: 'Lake was really nice'},
+    { :user => User.second, :reviewable => Park.find(25), :rating => 1, description: 'This is a terrible park, bugs everywhere, bad snacks, garbage place'},
+    { :user => User.first, :reviewable => Park.find(31), :rating => 4, description: 'Nice breeze, not too many people, thought I saw a grizzly bear but realized they do not live here'}
+  ])
