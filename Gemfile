@@ -5,6 +5,7 @@ ruby '2.4.5'
 gem 'httparty'
 gem "carrierwave"
 gem 'faker'
+gem 'fog'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
