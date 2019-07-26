@@ -1,4 +1,5 @@
 import React from "react"
+import VoteTile from "./VoteTile"
 
 const ReviewTile = props => {
   let icons = []
@@ -15,6 +16,7 @@ const ReviewTile = props => {
     <div className="review-tile">
       <div>{icons}</div>
       <p>{props.description}</p>
+      <VoteTile />
     </div>
   )
 }
