@@ -3,9 +3,8 @@ import React from 'react';
 const FormBodyField = (props) => {
   return (
     <label>{props.label}
-      <input
+      <textarea
         name={props.name}
-        type='text'
         value={props.content}
         onChange={props.handlerFunction}
       />
