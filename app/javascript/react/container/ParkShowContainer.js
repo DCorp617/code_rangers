@@ -72,7 +72,6 @@ class ParkShowContainer extends Component {
           <div className="review-tile">
             <ReviewTile
             key={review.reviewable_id}
-            //our ids are not unique
             id={review.id}
             rating={review.rating}
             description={review.description}
